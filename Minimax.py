@@ -1,4 +1,6 @@
+#Implementar en el lenguaje de programación de su elección el algoritmo de Minimax.
 import numpy as np
+from Funciones import cargarPagos
 from echo import Colors, echo
 
 
@@ -50,17 +52,6 @@ def equilibrio(a, b):
         echo('juego inestable', color=Colors.RED)
 
 
-def cargarPagos(cant):
-    vec1 = []
-    for i in range(cant):
-        vec2 = []
-        for j in range(cant):
-            echo(
-                f'ingrese el pago de la celda [{i+1},{j+1}]:', color=Colors.GREEN, end='')
-            pago = int(input())
-            vec2.append(pago)
-        vec1.append(vec2)
-    return vec1
 
 
 def main():
