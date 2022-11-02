@@ -31,8 +31,19 @@ A partir de esto se desarrollo un modelo, en el que, se carga la matriz de pagos
 
 El algoritmos diseñado se basa en como obtener las probabilidades de uso de cada estrategia para cada jugador en un juego de dos jugadores, ya sea de suma cero o no.
 
-Para lograrlo, 
+Para lograrlo, utilizamos el modulo **optimize** de la libreria **scipy**. El mismo cuenta con un metodo llamado **linprog()** para resolver modelos de programamación lineal. Los parámetros que recibe el método son los siguientes:
+- c: es un array unidimensional con los coeficientes de la funcion a optimizar.
+- A_ub: es un array bidimensional, en donde cada fila representa los coeficientes para cada variable para una restriccion de inecuación. Este array entonces tiene todos los coeficientes del lado izquierdo de las restricciones que tienen forma de ineciación.
+- b_ub: es un array unidimensional, en donde cada valor representa el lado derecho de una restriccion de inecuación.
+- A_eq: es un array bidimensional, en donde cada fila representa los coeficientes para cada variable para una restriccion de igualdad. Este array entonces tiene todos los coeficientes del lado izquierdo de las restricciones de igualdad.
+- b_eq: es un array unidimensional, en donde cada valor representa el lado derecho de una restriccion de igualdad.
+- bounds: es una tupla con subtuplas, en donde cada subtupla tiene los limites inferior y superior que puede tener cada variable.
+- method: es un string que representa el método que se va a utilizar para resolver el modelo. Se puede colocar tanto "simplex" como "revised simplex", pero estos métodos serán quitados en versiones posteriores de scipy, por lo que utilizamos el método "highs", el cual tiene una mejor performace y es el método por defecto.
+
+De esta forma, el programa realizado recibe por consola una matriz de pagos, ya que el juego es de suma cero, y luego genera los arrays necesarios para resolver el juego con estrategias mixtas para la perspectiva del jugador 1 y del jugador 2.
 
 #### Equilibrios de Nash
 
+El programa realizado para obtener los equilibrios de Nash de un juego utiliza la libreria nashpy, la cual recibe una matriz de pagos (si es que el juego es de suma cero) o dos matrices de pagos (si el juego no es de suma cero).
 
+Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de la libreria. Con esto, obtenemos las probabilidades de usar cada estrategia para cada jugador.
