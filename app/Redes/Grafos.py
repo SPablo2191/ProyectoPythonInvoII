@@ -1,5 +1,5 @@
 import igraph as ig
-def ingresarGrafoSinPesos():
+def ingresarGrafoSinPesos(directed=False):
     vertices: list = []
 
     respuesta = "si"
@@ -11,7 +11,7 @@ def ingresarGrafoSinPesos():
         vertices.append([nodoInicial, nodoFinal])
         respuesta = input("¿Desea ingresar arcos? si/no: ")
 
-    return ig.Graph(vertices)
+    return ig.Graph(vertices,directed)
 
 def ingresarGrafoConPesos():
     vertices: list = []
