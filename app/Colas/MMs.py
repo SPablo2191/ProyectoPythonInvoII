@@ -1,27 +1,48 @@
 import numpy as np
+def factorial(num): 
+    if num < 0: 
+        print("ERROR: Factorial de numero negativo")
+
+    elif num == 0: 
+        return 1
+        
+    else: 
+        fact = 1
+        while(num > 1): 
+            fact *= num 
+            num -= 1
+        return fact 
 lamda = int(input("ingrese valor de lambda:"))
 mu = int(input("ingrese valor de mu:"))
-Q_servidores = int(input("ingrese cantidad de servidores:"))
+s = int(input("ingrese cantidad de servidores:"))
 
 P = []
 C = []
 
-factor_de_uso = lamda/mu  
-L = lamda/(mu-lamda)  
-W = 1/(mu-lamda) 
-Wq = lamda/(mu*(mu-lamda)) 
-Lq = Wq * lamda  
+rho = lamda/mu
+P0 = 1-rho
+Lq = (P0*((lamda/mu)**s)*rho/(factorial(s)*((P0)**2)))  
+Wq = Lq / lamda
+W = Wq + (1/mu)
+L = Lq + (lamda/mu)
 
-
-P0 = 1-factor_de_uso
 P.append(P0)
 pacum = []
-for i in range(1, 17):
-    Ultimo_P = P[-1]
-    Nuevo_P = (1- Ultimo_P)*(Ultimo_P**(i-1))
-    P.append(Nuevo_P)
+for i in range(1, 40):
+    Pn = P[-1]
+    if(i<=0 and i<=s):
+        Pi = (((lamda/mu)**i)/factorial(i))*Pn
+    else:
+        Pi = (((lamda/mu)**i)/(factorial(s)*(s**(i-s))))*Pn
+    P.append(Pi)
     pacum.append(sum(P))
 
-
+print(f'lambda: {lamda}')
+print(f'Mu: {mu}')
+print(f'c: {s}')
+print(f'Wq: {Wq}')
+print(f'Lq: {Lq}')
+print(f'L: {L}')
+print(f'W: {W}')
 print(np.array(P))
-print(np.array(pacum))
+# print(np.array(pacum))
