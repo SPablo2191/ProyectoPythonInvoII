@@ -1,6 +1,11 @@
 import igraph as ig
 import matplotlib.pyplot as plt
 
+################################################################
+### Primera version del programa para obtener la ruta critica
+### NO FUNCIONA, ir a la version 2 directamente
+################################################################
+
 def ingresarTareas():
 
     tareas = []
