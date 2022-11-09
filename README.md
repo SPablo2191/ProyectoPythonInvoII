@@ -79,4 +79,8 @@ El programa CPMv2 recibe por consola las tareas de un proyecto de la siguiente f
 Con las tareas, duracion y precedencias del proyecto, se utiliza la libreria [criticalpath](https://github.com/chrisspen/criticalpath) para obtener la ruta crítica del proyecto.
 
 ## Teoria de colas
+### Modelo M/M/1
 El sistema de espera se caracteriza porque los tiempos de llegadas y los tiempos de servicio (mu) se distribuyen de manera exponencial y tienen un único servidor. Según sus características la disciplina de la cola es FIFO y el tamaño de la población de entrada es infinito, es decir, el número de clientes en el sistema no afecta a la tasa de llegadas (lambda).
+
+### Modelo M/M/S
+Se diferencia respecto al modelo M/M/1 en que el número de servidores s puede ser cualquier número natural tal que s ≥ 1.  Cuando el número de servidores es mayor que 1, las expresiones de las formulas cambian tal cual se pueden observar en el archivo MMs.py 
