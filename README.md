@@ -51,6 +51,7 @@ Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de 
 ## Segundo Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
 
 ### Modelo de Redes
+#### Minimal Spanning Tree
 #### Algoritmo de Floyd
 Definido en el archivo 'Ruta.py' se construyo un programa basado en el algoritmo de Floyd, este algoritmo determina la distancia entre 2 nodos cualesquiera en la red.
 Para la construccion del mismo se empleo la libreria numpy para la exposicion de los datos y sigue la siguiente logica:
@@ -61,3 +62,5 @@ Para la construccion del mismo se empleo la libreria numpy para la exposicion de
 Se basa en un grafo basado en una sola fuente y un solo sumidero o vertedero, utilizando arcos de capacidad infinita unidireccionales, como se muestra mediante los arcos de rayas en la figura anterior.
 Para el arco (i,j), la notación proporciona las capacidades de flujo en las dos direcciones i -> j y j -> i. 
 Para la construccion del mismo se uso la libreria  igraph el cual dispone del metodo del calculo y la libreria  matplotlib.pyplot para mostrar los graficos.
+
+#### Critical Path Method
