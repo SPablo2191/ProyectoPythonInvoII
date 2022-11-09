@@ -68,3 +68,4 @@ Para la construccion del mismo se uso la libreria  igraph el cual dispone del me
 ## Tercer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
 
 ### Teoria de colas
+El sistema de espera se caracteriza porque los tiempos de llegadas y los tiempos de servicio (mu) se distribuyen de manera exponencial y tienen un único servidor. Según sus características la disciplina de la cola es FIFO y el tamaño de la población de entrada es infinito, es decir, el número de clientes en el sistema no afecta a la tasa de llegadas (lambda).
