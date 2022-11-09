@@ -64,3 +64,7 @@ Para el arco (i,j), la notación proporciona las capacidades de flujo en las dos
 Para la construccion del mismo se uso la libreria  igraph el cual dispone del metodo del calculo y la libreria  matplotlib.pyplot para mostrar los graficos.
 
 #### Critical Path Method
+
+## Tercer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+
+### Teoria de colas
