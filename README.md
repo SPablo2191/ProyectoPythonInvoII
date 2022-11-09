@@ -2,9 +2,9 @@
 
 # Autores: Gonzalo Oropeza y Pablo Sandoval
 
-## Teoria de Juegos
+## Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
 
-### Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+### Teoria de Juegos
 
 #### Dominadas:
 
@@ -47,3 +47,17 @@ De esta forma, el programa realizado recibe por consola una matriz de pagos, ya 
 El programa realizado para obtener los equilibrios de Nash de un juego utiliza la libreria nashpy, la cual recibe una matriz de pagos (si es que el juego es de suma cero) o dos matrices de pagos (si el juego no es de suma cero).
 
 Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de la libreria. Con esto, obtenemos las probabilidades de usar cada estrategia para cada jugador.
+
+## Segundo Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+
+### Modelo de Redes
+#### Algoritmo de Floyd
+Definido en el archivo 'Ruta.py' se construyo un programa basado en el algoritmo de Floyd, este algoritmo determina la distancia entre 2 nodos cualesquiera en la red.
+Para la construccion del mismo se empleo la libreria numpy para la exposicion de los datos y sigue la siguiente logica:
+- dados 3 nodos (i,j,k) con las distancias de conexion que se muestran en los 3 arcos, es mas corto llegar de j a i pasando por k, si la distancia de i a k mas la distancia de k a j es menor que la distancia de i a j
+- a partir de esta idea se construyo la funcion recorriendo la matriz definiendo una fila k y una columa k como fila pivote y columna pivote respectivamente; en base a esto evalua con la matriz de distancia que representa al grafo (notese que se emplea un valor relativamente alto en referencia al valor infinito => INF)
+
+#### Modelo de flujo máximo
+Se basa en un grafo basado en una sola fuente y un solo sumidero o vertedero, utilizando arcos de capacidad infinita unidireccionales, como se muestra mediante los arcos de rayas en la figura anterior.
+Para el arco (i,j), la notación proporciona las capacidades de flujo en las dos direcciones i -> j y j -> i. 
+Para la construccion del mismo se uso la libreria  igraph el cual dispone del metodo del calculo y la libreria  matplotlib.pyplot para mostrar los graficos.
