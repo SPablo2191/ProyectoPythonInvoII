@@ -2,11 +2,9 @@
 
 # Autores: Gonzalo Oropeza y Pablo Sandoval
 
-## Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+## Teoria de Juegos
 
-### Teoria de Juegos
-
-### Dominadas:
+### Dominadas
 
 El algoritmo diseñado se basa en marcar el numero de estrategias que poseen ambos jugadores. A partir de eso se aplica el concepto de estrategia dominada para eliminar una serie de estrategias inferiores hasta que quede sólo una que se pueda elegir.
 
@@ -16,7 +14,8 @@ Para ello se emplean la funcion estrategiaDominada que recibe como parametro la 
 
 Cuando termina el ciclo se obtiene una matriz de dimension 1, con un pago conveniente para ambos.
 Se empleo la libreria numpy, para recorrer la matriz de forma eficiente y poder mostrarla por consola de forma adecuada.
-### Minimax:
+
+### Minimax
 
 Basandonos en el siguiente concepto que define el teorema Minimax:
 "En un juego de suma cero entre dosjugadores, donde cada jugador conoce el número finito de estrategias de su
@@ -25,7 +24,6 @@ oponente, es posible aplicar una estrategia racional que permite a ambos jugador
 A partir de esto se desarrollo un modelo, en el que, se carga la matriz de pagos para ambos jugadores y se buscar determinar si existe "punto silla" o si es un juego inestable, cargando en vectores los minimos de cada fila(funcion maximin()) y los maximos de columna (funcion minimax()); A partir de los mismos se busca obtener el maximo del vector de minimos (maximoMinimos()) y el minimo del vector de maximos (minimoMaximos()), y se los compara:
 - Si el maximo de minimos es igual al minimo de maximos, entonces se habla de "Punto Silla", donde , ningún jugador puede aprovechar la estrategia de su oponente para mejorar su propia posición.
 - Sino, es un juego inestable donde el otro jugador puede predecir la estrategia del otro, y asi, puede aprovechar esta información para mejorar su posición.
-
 
 ### Estrategias mixtas con programación lineal
 
@@ -48,24 +46,37 @@ El programa realizado para obtener los equilibrios de Nash de un juego utiliza l
 
 Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de la libreria. Con esto, obtenemos las probabilidades de usar cada estrategia para cada jugador.
 
-## Segundo Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+## Modelo de Redes
 
-### Modelo de Redes
-#### Minimal Spanning Tree
-#### Algoritmo de Floyd
+### Minimal Spanning Tree
+
+En este programa se recibe por consola los arcos del grafo escribiendo la relacion entre pares de nodos. Por consola se ingresa el numero de nodo fuente del arco y luego se ingresa el numero de nodo destino del arco. Hay que tener en cuenta que los nodos se enumeran del 0 en adelante. Luego de ingresado el arco, se pregunta si desea agregar más arcos, por lo que se repite el proceso anterior de indicar nodo fuente y nodo destino. La libreria igraph dinamicamente construye el grafo en base a los numeros ingresados.
+
+Este programa utiliza las siguientes librerias:
+- [igraph](https://igraph.readthedocs.io/en/0.10.2/index.html): utilizada para definir la estructura de grafo y a su vez tiene el metodo para un grafo spanning_tree(weights), donde weights es un array con los pesos de cada arco en el grafo.
+- matplotlib: utilizada para graficar el grafo con los arcos pertenecientes al árbol de mínima expansión.
+### Algoritmo de Floyd
+
 Definido en el archivo 'Ruta.py' se construyo un programa basado en el algoritmo de Floyd, este algoritmo determina la distancia entre 2 nodos cualesquiera en la red.
 Para la construccion del mismo se empleo la libreria numpy para la exposicion de los datos y sigue la siguiente logica:
 - dados 3 nodos (i,j,k) con las distancias de conexion que se muestran en los 3 arcos, es mas corto llegar de j a i pasando por k, si la distancia de i a k mas la distancia de k a j es menor que la distancia de i a j
 - a partir de esta idea se construyo la funcion recorriendo la matriz definiendo una fila k y una columa k como fila pivote y columna pivote respectivamente; en base a esto evalua con la matriz de distancia que representa al grafo (notese que se emplea un valor relativamente alto en referencia al valor infinito => INF)
 
-#### Modelo de flujo máximo
+### Modelo de flujo máximo
+
 Se basa en un grafo basado en una sola fuente y un solo sumidero o vertedero, utilizando arcos de capacidad infinita unidireccionales, como se muestra mediante los arcos de rayas en la figura anterior.
 Para el arco (i,j), la notación proporciona las capacidades de flujo en las dos direcciones i -> j y j -> i. 
 Para la construccion del mismo se uso la libreria  igraph el cual dispone del metodo del calculo y la libreria  matplotlib.pyplot para mostrar los graficos.
 
-#### Critical Path Method
+### Critical Path Method
 
-## Tercer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+El programa CPMv2 recibe por consola las tareas de un proyecto de la siguiente forma:
+1. Recibe el nombre de la tarea. Si se recibe vacío, acaba el proceso de ingresar tareas al proyecto.
+2. Recibe la duración de la tarea.
+3. Recibe el nombre de una tarea precedente a la que se esta ingresando y se repite el paso 3. Si se recibe vacío, acaba el proceso de ingresar tareas precedentes.
+4. Se vuelve al paso 1.
 
-### Teoria de colas
+Con las tareas, duracion y precedencias del proyecto, se utiliza la libreria [criticalpath](https://github.com/chrisspen/criticalpath) para obtener la ruta crítica del proyecto.
+
+## Teoria de colas
 El sistema de espera se caracteriza porque los tiempos de llegadas y los tiempos de servicio (mu) se distribuyen de manera exponencial y tienen un único servidor. Según sus características la disciplina de la cola es FIFO y el tamaño de la población de entrada es infinito, es decir, el número de clientes en el sistema no afecta a la tasa de llegadas (lambda).
