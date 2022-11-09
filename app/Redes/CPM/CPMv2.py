@@ -77,6 +77,9 @@ def rutaCritica(tareas, titulo="Titulo Grafo"):
 
 
 if __name__ == "__main__":
+    tareas = ingresarTareas()
+    rutaCritica(tareas)
+    
     # ejDiaposResuelto = [
     #     ["A", [], 5],
     #     ["B", [], 6],
@@ -89,6 +92,3 @@ if __name__ == "__main__":
     # ]
     # rutaCritica(ejDiaposResuelto, "resuelto")
 
-    tareas = ingresarTareas()
-
-    rutaCritica(tareas)
