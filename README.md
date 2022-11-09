@@ -2,10 +2,7 @@
 
 # Autores: Gonzalo Oropeza y Pablo Sandoval
 
-## Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
-
 ## Teoria de Juegos
-
 
 ### Dominadas:
 
@@ -54,7 +51,11 @@ Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de 
 
 ### Minimal Spanning Tree
 
+En este programa se recibe por consola los arcos del grafo escribiendo la relacion entre pares de nodos. Por consola se ingresa el numero de nodo fuente del arco y luego se ingresa el numero de nodo destino del arco. Hay que tener en cuenta que los nodos se enumeran del 0 en adelante. Luego de ingresado el arco, se pregunta si desea agregar más arcos, por lo que se repite el proceso anterior de indicar nodo fuente y nodo destino. La libreria igraph dinamicamente construye el grafo en base a los numeros ingresados.
 
+Este programa utiliza las siguientes librerias:
+- ![https://igraph.readthedocs.io/en/0.10.2/index.html](igraph): utilizada para definir la estructura de grafo y a su vez tiene el metodo para un grafo spanning_tree(weights), donde weights es un array con los pesos de cada arco en el grafo.
+- matplotlib: utilizada para graficar el grafo con los arcos pertenecientes al árbol de mínima expansión.
 
 ### Shortest Path
 
@@ -65,3 +66,11 @@ Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de 
 
 
 ### Critical Path Method
+
+El programa CPMv2 recibe por consola las tareas de un proyecto de la siguiente forma:
+1. Recibe el nombre de la tarea. Si se recibe vacío, acaba el proceso de ingresar tareas al proyecto.
+2. Recibe la duración de la tarea.
+3. Recibe el nombre de una tarea precedente a la que se esta ingresando y se repite el paso 3. Si se recibe vacío, acaba el proceso de ingresar tareas precedentes.
+4. Se vuelve al paso 1.
+
+Con las tareas, duracion y precedencias del proyecto, se utiliza la libreria ![https://github.com/chrisspen/criticalpath](criticalpath) para obtener la ruta crítica del proyecto.
