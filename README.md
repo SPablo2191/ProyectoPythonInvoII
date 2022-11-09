@@ -2,11 +2,12 @@
 
 # Autores: Gonzalo Oropeza y Pablo Sandoval
 
+## Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
+
 ## Teoria de Juegos
 
-### Primer Proyecto de la materia de Investigación Operativa II de la facultad Ingenieria en Informatica - UCASAL
 
-#### Dominadas:
+### Dominadas:
 
 El algoritmo diseñado se basa en marcar el numero de estrategias que poseen ambos jugadores. A partir de eso se aplica el concepto de estrategia dominada para eliminar una serie de estrategias inferiores hasta que quede sólo una que se pueda elegir.
 
@@ -16,7 +17,7 @@ Para ello se emplean la funcion estrategiaDominada que recibe como parametro la 
 
 Cuando termina el ciclo se obtiene una matriz de dimension 1, con un pago conveniente para ambos.
 Se empleo la libreria numpy, para recorrer la matriz de forma eficiente y poder mostrarla por consola de forma adecuada.
-#### Minimax:
+### Minimax:
 
 Basandonos en el siguiente concepto que define el teorema Minimax:
 "En un juego de suma cero entre dosjugadores, donde cada jugador conoce el número finito de estrategias de su
@@ -27,7 +28,7 @@ A partir de esto se desarrollo un modelo, en el que, se carga la matriz de pagos
 - Sino, es un juego inestable donde el otro jugador puede predecir la estrategia del otro, y asi, puede aprovechar esta información para mejorar su posición.
 
 
-#### Estrategias mixtas con programación lineal
+### Estrategias mixtas con programación lineal
 
 El algoritmos diseñado se basa en como obtener las probabilidades de uso de cada estrategia para cada jugador en un juego de dos jugadores, ya sea de suma cero o no.
 
@@ -42,8 +43,25 @@ Para lograrlo, utilizamos el modulo **optimize** de la libreria **scipy**. El mi
 
 De esta forma, el programa realizado recibe por consola una matriz de pagos, ya que el juego es de suma cero, y luego genera los arrays necesarios para resolver el juego con estrategias mixtas para la perspectiva del jugador 1 y del jugador 2.
 
-#### Equilibrios de Nash
+### Equilibrios de Nash
 
 El programa realizado para obtener los equilibrios de Nash de un juego utiliza la libreria nashpy, la cual recibe una matriz de pagos (si es que el juego es de suma cero) o dos matrices de pagos (si el juego no es de suma cero).
 
 Entonces, el programa recibe la/s matriz/ces y se las pasa el método Game() de la libreria. Con esto, obtenemos las probabilidades de usar cada estrategia para cada jugador.
+
+
+## Redes
+
+### Minimal Spanning Tree
+
+
+
+### Shortest Path
+
+
+
+### Maximal Flow
+
+
+
+### Critical Path Method
