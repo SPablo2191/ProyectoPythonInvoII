@@ -25,7 +25,7 @@ def simulate_md1(lambd, mu, max_time, verbosity=0):
             md1.put(customer)
 
             if verbosity >= 2:
-                print("{:10.2f}: Customer {} arrives".format(t, customer.cid))
+                print("{:10.2f}: Cliente # {} Llega".format(t, customer.cid))
 
             next_arrival = t + random.expovariate(lambd)
 
@@ -37,7 +37,7 @@ def simulate_md1(lambd, mu, max_time, verbosity=0):
             served_customers.append(done_customer)
 
             if verbosity >= 2:
-                print("{:10.2f}: Customer {} departs".format(
+                print("{:10.2f}: Cliente # {} se va".format(
                     t, done_customer.cid))
 
             if md1.empty():
@@ -57,4 +57,6 @@ def simulate_md1(lambd, mu, max_time, verbosity=0):
     return served_customers, unserved_customers
 
 
-simulate_md1(1, 1, 100, verbosity=2)
+vec1, vec2 = simulate_md1(1, 1, 100, verbosity=2)
+print(f"clientes servidos: {vec1}")
+print(f"clientes en espera: {vec2}")
