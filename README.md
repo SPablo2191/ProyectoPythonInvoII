@@ -79,3 +79,30 @@ El programa CPMv2 recibe por consola las tareas de un proyecto de la siguiente f
 Con las tareas, duracion y precedencias del proyecto, se utiliza la libreria [criticalpath](https://github.com/chrisspen/criticalpath) para obtener la ruta crítica del proyecto.
 
 ## Teoria de colas
+### Modelo M/M/1
+El sistema de espera se caracteriza porque los tiempos de llegadas y los tiempos de servicio (mu) se distribuyen de manera exponencial y tienen un único servidor. Según sus características la disciplina de la cola es FIFO y el tamaño de la población de entrada es infinito, es decir, el número de clientes en el sistema no afecta a la tasa de llegadas (lambda).
+
+### Modelo M/M/S
+Se diferencia respecto al modelo M/M/1 en que el número de servidores s puede ser cualquier número natural tal que s ≥ 1.  Cuando el número de servidores es mayor que 1, las expresiones de las formulas cambian tal cual se pueden observar en el archivo MMs.py 
+
+### Modelo M/D/1
+Una cola M/D/1 no es un tipo especial de cola, sino que a partir de una cola normal, se especifica un orden de salida y de llegada a esta cola la cual:
+- M: Llegadas seguidas de un proceso Markov, teniendo como velocidad de llegada definida por  λ, donde 1/ λ es el tiempo entre las llegadas => se emplea para la distribucion exponencial
+- D: El tiempo de servicio de cada cliente es determinista (D). La tasa de servicio es definida por μ, donde 1/μ es el tiempo entre servicios. Siendo que el tiempo es determinista, entonces sera exactamente 1/μ para cada cliente (excepto que haya un "empate" en la probabilidad de distribución).
+- 1: Un unico servidor
+Para la simulación, se construyo una clase cliente (Customer.py) en donde cada instacia sera el arribo de un cliente de un cliente a la cola, teniendo como atributos:
+- cid: Identificador del cliente, para distinguirlo durante la simulación.
+- arrival_time : tiempo de llegada del cliente a la cola
+- departure_time : tiempo de Salida del cliente a la cola
+
+Despues en la funcion simulate_md1() se reciben los siguientes parametros:
+- lambd:para la distribucion exponencial de llegada del proximo cliente
+- mu : frecuencia de los clientes que son servidos, a mayor sea valor, mayor sera la cantidad de clientes atendidos en una unidad de tiempo.
+- max_time: marca el tiempo de duración de la simulación
+- verbosity: permite configurar la salida que arroje el programa.puede ser:
+- 0: no muestra nada
+- 1: muestra el estado de la cola en cada instante
+- 2: muestra lo clientes que llegar y se van en cada instante.
+Por ultimo, este programa retorna 2 vectores:
+- los clientes atendidos
+- los clientes que aun quedaron por ser atendidos cuando se termino el tiempo de simulación.

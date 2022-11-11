@@ -1,7 +1,7 @@
 import numpy as np
 lamda = int(input("ingrese valor de lambda:"))
 mu = int(input("ingrese valor de mu:"))
-Q_servidores = int(input("ingrese cantidad de servidores:"))
+Q_servidores = 1
 
 P = []
 C = []
