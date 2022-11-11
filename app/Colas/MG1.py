@@ -33,8 +33,8 @@ Wq = Lq/lam
 W = Wq + 1/mu
 
 print("Medidas de Eficacia del Sistema:")
-print(f"Cantidad promedio en el sistema: L = {L}")
-print(f"Cantidad promedio esperando en la cola: Lq = {Lq}")
-print(f"Tiempo promedio en el sistema: W = {W}")
-print(f"Tiempo promedio esperando en la cola: W = {Wq}")
-print(f"Factor de utilización del unico servidor: rho = {rho}")
+print(f"\tCantidad promedio en el sistema: L = {L}")
+print(f"\tCantidad promedio esperando en la cola: Lq = {Lq}")
+print(f"\tTiempo promedio en el sistema: W = {W}")
+print(f"\tTiempo promedio esperando en la cola: W = {Wq}")
+print(f"\tFactor de utilización del unico servidor: rho = {rho}")
