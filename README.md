@@ -106,3 +106,17 @@ Despues en la funcion simulate_md1() se reciben los siguientes parametros:
 Por ultimo, este programa retorna 2 vectores:
 - los clientes atendidos
 - los clientes que aun quedaron por ser atendidos cuando se termino el tiempo de simulación.
+
+### Modelo M/G/1
+En este modelo de colas, las llegadas tienen una distibución markoviana, donde la tasa de llegadas es igual a λ. 
+Los tiempos de servicio tienen una distribución general, por lo que puede ser arbitraria. Lo que nos interesa de esta distribución arbitraria es su media μ y su varianza σ².
+
+Con tales datos, se puede calcular:
+
+- L = Cantidad promedio en el sistema
+- Lq = Cantidad promedio en cola
+- W = Tiempo promedio en el sistema
+- Wq = Tiempo promedio en cola
+- c = Factor de utilizacion del/los servidores
+
+Fuente: [Explicación Modelo M/G/1](https://prezi.com/xjkhlumkoj_9/sistema-mg1/)
